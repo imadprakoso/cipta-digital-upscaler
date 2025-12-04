@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* DEFINISI TEMA */
+@theme {
+  --color-primary: #7c3aed;
+  --color-dark: #0f172a;
+  --color-darker: #020617;
+}
+
+/* KUNCI PERBAIKAN DARK MODE: */
+/* Baris ini memaksa Tailwind mengaktifkan mode gelap jika ada class 'dark' di HTML */
+@variant dark (&:where(.dark, .dark *));
+
+/* SETUP GLOBAL */
+body {
+  @apply bg-gray-50 text-gray-900 dark:bg-dark dark:text-white transition-colors duration-200;
+}
